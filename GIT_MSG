@@ -1,2 +1,0 @@
--- feat: download_used_words.lua now outputs to the 'used_words_dict.txt' file.
--- chore: a README.md file now included.

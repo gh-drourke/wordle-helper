@@ -1,3 +1,10 @@
+commit 62ae909
+
+version: 0.0.3
+
+-- feat: download_used_words.lua now outputs to the 'used_words_dict.txt' file.
+-- chore: a README.md file now included.
+
 commit bc77d1a
 
 version: 0.0.2
