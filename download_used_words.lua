@@ -39,7 +39,7 @@ local function extractText(inputText, startPattern, endPattern)
     return nil
 end
 
-local function listUsedWords()
+local function listUsedWords(file_write)
     -- URL of the web page to scrape
     local url = "https://www.rockpapershotgun.com/wordle-past-answers"
 
@@ -55,9 +55,15 @@ local function listUsedWords()
         table.insert(answers, answer)
     end
 
+    local fd = io.open(file_write, "w")
+    local outstring = ''
     for i, answer in ipairs(answers) do
-        print(i,answer)
+        outstring = string.format("%s\t %s\n", i, answer)
+        print(i, answer)
+        fd:write(outstring)
     end
+    fd:close()
 end
 
-listUsedWords()
+local file_out = "used_words_dict.txt"
+listUsedWords(file_out)
